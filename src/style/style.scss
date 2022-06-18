@@ -28,8 +28,10 @@ h6 {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: $main-color;
     display: inline-block;
+    transition: all .4s;
+    
     &:hover {
         text-decoration: none;
         color: inherit;
