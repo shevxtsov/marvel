@@ -12,12 +12,13 @@ const CharList = (props) => {
     const [newItemsLoading, setNewItemsLoading] = useState(false)
     const [offset, setOffset] = useState(210)
     const [itemsEnded, setItemsEnded] = useState(false)
-    const [limit, setLimit] = useState(3)
+    const limit = 3
     
     const {loading, error, getAllCharacters, clearError} = useMarvelService()
 
     useEffect(() => {
         onRequest(offset, true)
+        // eslint-disable-next-line
     }, [])
 
     const onRequest = (offset, initial) => {
@@ -83,7 +84,7 @@ const CharList = (props) => {
 
     const itemsList = renderItems(items)
     const skeleton = loading || newItemsLoading ? renderSkeletons() : null
-    const errorMessage = error ? <ErrorMessage/> : null
+    const errorMessage = error ? <ErrorMessage /> : null
 
     return (
         <div className="char__list">

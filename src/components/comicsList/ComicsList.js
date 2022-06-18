@@ -12,11 +12,12 @@ const ComicsList = () => {
     const [newItemsLoading, setNewItemsLoading] = useState(false)
     const [offset, setOffset] = useState(0)
     const [itemsEnded, setItemsEnded] = useState(false)
-    const [limit, setLimit] = useState(8)
+    const limit = 8
     const {loading, error, getAllComics} = useMarvelService()
 
     useEffect(() => {
         onRequest(offset, true)
+        // eslint-disable-next-line
     }, [])
 
     const onRequest = (offset, initial) => {
